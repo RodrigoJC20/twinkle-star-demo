@@ -1,4 +1,18 @@
-.all {
+:root{
+  --bgColor : hsla(242, 86%, 6%, 1);
+  --bgColorLight : rgb(5, 4, 29);
+  --textColor : hsla(242, 86%, 88%, 1);
+  --textColorDark : hsla(242, 36%, 0%, 1);
+  --paperColor: hsla(242, 86%, 44%, 1);
+  --paperColorDark: hsla(242, 86%, 34%, 1);
+  --shadowColorFaint: hsla(0, 0%, 0%, 0.2);
+}
+  
+::selected{
+  color: var(--textColorDark);
+}
+
+html, body{
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -11,7 +25,7 @@
   position: relative;
 }
 
-.all, * {
+*{
   box-sizing: border-box;
   transition: all 0.12s cubic-bezier(0.42, 0.54, 0.22, 1.26);
 }
@@ -24,56 +38,49 @@
   height: 100%;
 }
 
-audio {
-  position: fixed;
-  left: 10px;
-  bottom: -10px;
-  width: calc(100% - 20px);
+/* Center the buttons and input container */
+#buttons-container {
+  text-align: center;
+  margin-top: 20px;
 }
 
-audio.active{
-  bottom: 10px;
-}
-
-#thefile {
-  width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: 1;
-}
-
-label.file{
+/* Style for the image buttons */
+.image-button {
+  width: 200px;
   display: inline-block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  padding: 1rem 2rem;
-  border-radius: 4px;
-  
-  background: var(--paperColor);
-  color: var(--textColor);
-  font-size: 1.25em;
-  font-weight: 700;
-  box-shadow: 0 20px 60px var(--shadowColorFaint);
-
-  cursor: pointer;
-}
-  
-  
-label.file:hover{
-    background: var(--paperColorDark);
-    transform: translate3d(-50%, -55%, 0);
+  vertical-align: top;
+  text-align: center;
+  margin: 10px;
 }
 
-label.file:active{
-    background: var(--paperColorDark);
-    transform: translate3d(-50%, -45%, 0);
+/* Style for the button images */
+.button-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 150px;
 }
 
-label.file.normal{
+/* Style for the button labels (text below the images) */
+.button-label {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Style for the file input label */
+
+label.file:hover {
+  background: var(--paperColorDark);
+  transform: translate3d(-50%, -55%, 0);
+}
+
+label.file:active {
+  background: var(--paperColorDark);
+  transform: translate3d(-50%, -45%, 0);
+}
+
+label.file.normal {
   transform: translate3d(10%, 50%, 0);
   padding: 0.2rem 2rem;
   font-size: 1rem;

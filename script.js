@@ -3,24 +3,40 @@ let vizInit = function (){
     let file = document.getElementById("thefile");
     let audio = document.getElementById("audio");
     let fileLabel = document.querySelector("label.file");
+    let buttonsContainer = document.getElementById("buttons-container");
   
-    document.onload = function(e){
+    function loadAndPlayAudio(audioFile) {
+        audio.classList.add('active');
+        audio.src = audioFile;
+        audio.classList.remove('active');
+        audio.classList.add('hidden');
+        audio.load();
+        audio.play();
+        play();
+    }
+
+    document.onload = function (e) {
         console.log(e);
         audio.play();
         play();
     }
 
-    file.onchange = function(){
+    // Handle Button A click
+    document.getElementById("buttonA").addEventListener("click", function () {
+        loadAndPlayAudio('enana-blanca.mp3');
+        buttonsContainer.style.display = 'none'; // Hide buttons and file input
+    });
+
+    // Handle Button B click
+    document.getElementById("buttonB").addEventListener("click", function () {
+        loadAndPlayAudio('protostar.mp3');
+        buttonsContainer.style.display = 'none'; // Hide buttons and file input
+    });
+
+    file.onchange = function () {
         fileLabel.classList.add('normal');
-        audio.classList.add('active');
-        let files = this.files;
-        
-        audio.src = URL.createObjectURL(files[0]);
-        audio.classList.remove('active')
-        audio.classList.add('hidden')
-        audio.load();
-        audio.play();
-        play();
+        loadAndPlayAudio(URL.createObjectURL(this.files[0]));
+        buttonsContainer.style.display = 'none'; // Hide buttons and file input
     }
   
     function play() {
