@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="content">
         <div id="buttons-container">
@@ -25,18 +27,18 @@
                 </button>
                 <button id="buttonD" class="image-button">
                     <div class="button-image" style="background-image: url('gigante-roja.png');"></div>
-                    <div class="button-label">red Giant</div>
+                    <div class="button-label">Red Giant</div>
                 </button>
             </div>
             <label for="thefile" class="file">Choose an audio file
                 <input type="file" id="thefile" accept="audio/*" />
             </label>
         </div>
-    
+
         <audio id="audio"></audio>
         <div id="out"></div>
     </div>
-    
+
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js'></script>
     <script src='https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/controls/OrbitControls.js'></script>
@@ -44,4 +46,5 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.3.0/simplex-noise.min.js'></script>
     <script src="script.js"></script>
 </body>
+
 </html>
