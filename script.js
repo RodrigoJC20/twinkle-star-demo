@@ -33,6 +33,18 @@ let vizInit = function (){
         buttonsContainer.style.display = 'none'; // Hide buttons and file input
     });
 
+    // Handle Button C click
+    document.getElementById("buttonC").addEventListener("click", function () {
+        loadAndPlayAudio('estrella-blanca.mp3');
+        buttonsContainer.style.display = 'none'; // Hide buttons and file input
+    });
+
+    // Handle Button D click
+    document.getElementById("buttonD").addEventListener("click", function () {
+        loadAndPlayAudio('gigante-roja.mp3');
+        buttonsContainer.style.display = 'none'; // Hide buttons and file input
+    });
+
     file.onchange = function () {
         fileLabel.classList.add('normal');
         loadAndPlayAudio(URL.createObjectURL(this.files[0]));
